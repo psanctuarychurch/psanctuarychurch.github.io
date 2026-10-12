@@ -18,7 +18,10 @@
 
   // An initials avatar in the family's shape: a tiny spore print (gills, dust, a stem ring) with the
   // initials at its heart. System serif only: an <img> SVG can't load the page's web fonts.
-  function sporeAvatar(ini, c1, c2) {
+  function sporeAvatar(ini, c1, c2, name) {
+    // People here are named by first name only, so one letter, not the first two of the name.
+    var one = String(name || "").trim();
+    if (one && !/\s/.test(one)) ini = one.charAt(0).toUpperCase();
     var g = "";
     for (var i = 0; i < 40; i++) {
       var a = (i / 40) * Math.PI * 2 + 0.05;
@@ -35,7 +38,7 @@
       '<g stroke="#f6efe4" stroke-opacity=".34" stroke-width="1.2" stroke-linecap="round">' + g + "</g>" +
       '<circle cx="50" cy="50" r="22" fill="#16111a" fill-opacity=".72" stroke="' + c1 + '" stroke-width="2"/>' +
       '<text x="50" y="50" dy=".36em" text-anchor="middle" font-family="Georgia, \'Times New Roman\', serif" font-size="' +
-      (ini.length > 1 ? 21 : 26) + '" fill="#f6efe4">' + ini + "</text></svg>"
+      (ini.length > 1 ? 21 : 27) + '" fill="#f6efe4">' + ini + "</text></svg>"
     );
   }
 
