@@ -1,0 +1,184 @@
+/* Psanctuary Church's look for the arrival kit, shared by every Psanctuary Church page (the entry portal and the
+   AstroLog). Load after arrival.css, before the site's own CSS.
+
+   The family look is a spore print: a violet-black base (never neutral grey), Young Serif with
+   Figtree, and the print a mushroom cap leaves when it drops its spores. The sibling org,
+   psanctuary, shares all of it except the accent: golden cap here, bruise blue there.
+
+   Modes are set on attribute selectors, so a light card in the splash can preview a mode by carrying
+   data-theme itself. --spore is the family's own token (the violet of the spores themselves); the
+   spore field behind every page and the spore prints read it. */
+
+:root,
+[data-theme="spore"] {
+  --background: #16111a;
+  --foreground: #efe7dc;
+  --heading: #f6efe4;
+  --muted: #aba0ae;
+  --surface: #201926;
+  --surface-muted: #2a2131;
+  --border: #342a3b;
+  --accent: #e2b45a;
+  --accent-strong: #f0cf8a;
+  --on-accent: #2a1a02;
+  --spore: #a88bc9;
+  --scrim: rgba(22, 17, 26, 0.62);
+  --arr-backdrop: rgba(10, 7, 13, 0.64);
+  color-scheme: dark;
+}
+
+[data-theme="paper"] {
+  --background: #f3f1f4;
+  --foreground: #1c1620;
+  --heading: #1c1620;
+  --muted: #615767;
+  --surface: #ffffff;
+  --surface-muted: #ece7ef;
+  --border: #e0dae4;
+  --accent: #8a5b10;
+  --accent-strong: #6e480a;
+  --on-accent: #ffffff;
+  --spore: #6a4c8c;
+  --scrim: rgba(243, 241, 244, 0.7);
+  --arr-backdrop: rgba(28, 22, 32, 0.34);
+  color-scheme: light;
+}
+
+/* @@third-mode */
+[data-theme="candle"] {
+  --background: #1a120d;
+  --foreground: #f2e7d7;
+  --heading: #fbf3e6;
+  --muted: #c2ae95;
+  --surface: #241911;
+  --surface-muted: #2f2217;
+  --border: #47341f;
+  --accent: #f0c46a;
+  --accent-strong: #f8dc9c;
+  --on-accent: #2a1a02;
+  --spore: #c9a0c8;
+  --scrim: rgba(26, 18, 13, 0.62);
+  --arr-backdrop: rgba(12, 8, 5, 0.66);
+  color-scheme: dark;
+}
+/* @@end-third-mode */
+
+/* Shared by every mode: the family's type, and a preview strip that fans out like gills. */
+:root,
+[data-theme] {
+  --font-heading: "Young Serif", Georgia, serif;
+  --font-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --heading-settings: normal;
+  --body-leading: 1.65;
+  --perf: color-mix(in srgb, var(--spore) 55%, transparent);
+  /* half a print rising from below the strip: the stem ring, then soft-edged gills (soft ramps,
+     not hard stops, so thin lines don't shimmer into moiré) */
+  --ink: radial-gradient(circle at 50% 210%, var(--surface) 0 27%, var(--accent) 27.5% 30%, transparent 30.5%),
+    repeating-conic-gradient(from 0deg at 50% 210%, transparent 0deg, color-mix(in srgb, var(--spore) 70%, transparent) 0.8deg, transparent 1.6deg 3.4deg),
+    radial-gradient(farthest-side at 50% 210%, color-mix(in srgb, var(--spore) 26%, var(--surface)) 55%, var(--surface) 100%);
+}
+
+/* ── shape: soft and round, like a cap ─────────────────────────────────────────────────── */
+:root {
+  --arr-radius: 14px;
+}
+.arr-card-ink {
+  background-size: 100% 100%;
+  background-position: 50% 50%;
+  transition: filter 0.4s ease;
+}
+.arr-card:hover .arr-card-ink {
+  filter: brightness(1.18) saturate(1.1);
+}
+/* Panels catch the light at one corner and the spores at the other. */
+.arr-frame.arr-panel {
+  background: linear-gradient(150deg, color-mix(in srgb, var(--accent) 55%, var(--border)) 0%, var(--border) 34%, var(--border) 68%, color-mix(in srgb, var(--spore) 50%, var(--border)) 100%);
+}
+
+/* ── spore dust: dotted rules instead of solid ones ────────────────────────────────────── */
+.arr-rule {
+  height: 3px;
+  background: radial-gradient(circle, var(--perf) 1.1px, transparent 1.6px) 0 50% / 9px 3px repeat-x;
+}
+.arr-guide-head {
+  border-bottom: 0;
+  background: radial-gradient(circle, var(--perf) 1.1px, transparent 1.6px) bottom left / 9px 3px repeat-x;
+}
+.arr-guide-foot {
+  border-top: 0;
+  background: radial-gradient(circle, var(--perf) 1.1px, transparent 1.6px) top left / 9px 3px repeat-x;
+}
+.arr-people:not(.arr-people-compact),
+.arr-latest {
+  border: 1px solid var(--border);
+  border-radius: var(--arr-radius);
+  background: color-mix(in srgb, var(--surface) 78%, transparent);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  overflow: hidden;
+}
+.arr-people:not(.arr-people-compact) > li + li,
+.arr-latest > li + li {
+  background: radial-gradient(circle, var(--perf) 1px, transparent 1.5px) top left / 9px 3px repeat-x;
+}
+.arr-latest a:hover {
+  background: var(--surface-muted);
+}
+
+/* ── the guide's progress glyph becomes a cap seen from underneath: each step lights a gill ─ */
+.arr-glyph-wrap {
+  position: relative;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--spore) 60%, transparent);
+}
+.arr-glyph {
+  clip-path: circle(42.3% at 50% 50%);
+}
+.arr-glyph .arr-wedge {
+  stroke: var(--surface);
+  stroke-width: 1.4px;
+  opacity: 0.16;
+}
+.arr-glyph .arr-wedge.is-lit {
+  opacity: 1;
+}
+/* fine gills over the wedges, and the stem ring at the center */
+.arr-glyph-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 4.5px;
+  border-radius: 50%;
+  background: repeating-conic-gradient(from 3deg, color-mix(in srgb, var(--surface) 62%, transparent) 0 1.1deg, transparent 1.1deg 7.5deg);
+  pointer-events: none;
+}
+.arr-glyph-wrap::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 9px;
+  height: 9px;
+  margin: -4.5px 0 0 -4.5px;
+  border-radius: 50%;
+  background: var(--surface);
+  box-shadow: 0 0 0 1.5px var(--accent);
+  pointer-events: none;
+}
+
+/* ── the spore prints turn, slowly: drift turns them, a flush turns them faster ─────────── */
+@keyframes spore-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+:root:not([data-motion="still"]) .spore-print {
+  animation: spore-turn 420s linear infinite;
+}
+[data-motion="flush"] .spore-print {
+  animation-duration: 160s;
+}
+@media (prefers-reduced-motion: reduce) {
+  :root:not([data-motion]) .spore-print {
+    animation: none;
+  }
+}

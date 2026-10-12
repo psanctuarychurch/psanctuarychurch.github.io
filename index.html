@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-arrival-site="portal">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,139 +7,131 @@
 <meta name="description" content="Psanctuary Church's home on GitHub: an entry portal, a public changelog, and a library of how things are built.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="alternate icon" href="/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Young+Serif&display=swap">
-<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<!-- Link previews (Telegram, iMessage, Slack, Discord…): every URL absolute, a real 1200×630 JPEG. -->
+<link rel="canonical" href="https://psanctuarychurch.github.io/">
+<meta property="og:site_name" content="Psanctuary Church on GitHub">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://psanctuarychurch.github.io/">
 <meta property="og:title" content="Psanctuary Church on GitHub">
 <meta property="og:description" content="A sacred mushroom church's quiet home on GitHub: entry portal, changelog, and library.">
 <meta property="og:image" content="https://psanctuarychurch.github.io/social-card.jpg">
-<meta property="og:url" content="https://psanctuarychurch.github.io/">
-<meta property="og:type" content="website">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Psanctuary Church: GitHub home, changelog, and library. A violet spore print with a golden stem ring.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Psanctuary Church on GitHub">
 <meta name="twitter:description" content="A sacred mushroom church's quiet home on GitHub: entry portal, changelog, and library.">
 <meta name="twitter:image" content="https://psanctuarychurch.github.io/social-card.jpg">
-<script>
-(function () {
-  var saved = null;
-  try { saved = localStorage.getItem("psanctuarychurch-theme"); } catch (e) {}
-  document.documentElement.dataset.theme = saved === "light" || saved === "dark" ? saved : "dark";
-})();
-</script>
+<meta name="twitter:image:alt" content="Psanctuary Church: GitHub home, changelog, and library. A violet spore print with a golden stem ring.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Young+Serif&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<!-- Psanctuary Church's arrival kit: one stylesheet + script shared with the AstroLog, served from /arrival/ on
+     this site. arrival.js applies the visitor's light, motion, contrast and cursor choice before
+     first paint, so it loads here in <head>. org.css holds the family's modes and tokens. -->
+<link rel="stylesheet" href="/arrival/arrival.css">
+<link rel="stylesheet" href="/arrival/org.css">
+<script src="/arrival/org.js"></script>
+<script src="/arrival/arrival.js"></script>
 <style>
-/* Psanctuary family tokens. The base is a psilocybe spore print: violet-black, never neutral grey.
-   Siblings share everything here except --signature (golden cap for psanctuarychurch). */
-:root {
-  --bg: #F3F1F4;
-  --surface: #FFFFFF;
-  --ink: #1C1620;
-  --ink-soft: #615767;
-  --line: #E0DAE4;
-  --spore: #6A4C8C;
-  --signature: #8A5B10;
-  --on-signature: #FFFFFF;
-  --font-display: "Young Serif", Georgia, serif;
-  --font-body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
-  color-scheme: light;
-}
-
-:root[data-theme="dark"] {
-  --bg: #16111A;
-  --surface: #201926;
-  --ink: #EFE7DC;
-  --ink-soft: #ABA0AE;
-  --line: #342A3B;
-  --spore: #A88BC9;
-  --signature: #E2B45A;
-  --on-signature: #2A1A02;
-  color-scheme: dark;
-}
-
-  * { box-sizing: border-box; }
+  /* Colors, type and the modes come from /arrival/org.css, shared with the AstroLog. */
+  *, *::before, *::after { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; overflow-x: hidden; }
+  /* Only <body> gets a background, so it paints the whole canvas and the spore field (z-index -1)
+     shows through above it. */
   body {
-    background: var(--bg);
-    color: var(--ink);
+    background: var(--background);
+    color: var(--foreground);
     font: 400 1.0625rem/1.65 var(--font-body);
-    padding-bottom: 104px;
+    padding-bottom: 4.75rem;
+    -webkit-font-smoothing: antialiased;
   }
-  a { color: var(--signature); }
-  a:focus-visible, button:focus-visible { outline: 2px solid var(--signature); outline-offset: 3px; border-radius: 6px; }
+  a { color: var(--accent); text-underline-offset: 0.18em; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
   #sporefield-canvas { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
 
   .topbar {
     position: sticky; top: 0; z-index: 30;
-    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-    padding: 0.7rem 1.25rem;
-    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    display: flex; align-items: center; justify-content: space-between; gap: 0.75rem;
+    padding: 0.6rem 1.25rem;
+    background: color-mix(in srgb, var(--background) 82%, transparent);
     backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid var(--border);
   }
-  .topbar-brand { display: inline-flex; align-items: center; gap: 0.55rem; color: var(--ink); text-decoration: none; font-family: var(--font-display); font-size: 1.05rem; }
-  .topbar-brand .mark { width: 26px; height: 26px; color: var(--signature); }
-  .theme-toggle {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 36px; height: 36px; padding: 0; border-radius: 999px;
-    border: 1px solid var(--line); background: var(--surface); color: var(--signature);
-    cursor: pointer; font-size: 1rem;
+  .topbar-brand { display: inline-flex; align-items: center; gap: 0.55rem; color: var(--heading); text-decoration: none; font-family: var(--font-heading); font-size: 1.05rem; white-space: nowrap; }
+  .topbar-brand .mark { width: 26px; height: 26px; color: var(--accent); flex: none; }
+  @media (max-width: 700px) {
+    .topbar [data-arr-drawer] .arr-chip-label { display: none; }
   }
-  .theme-icon-light, .theme-icon-dark { display: none; }
-  :root[data-theme="dark"] .theme-icon-light { display: inline; }
-  :root:not([data-theme="dark"]) .theme-icon-dark { display: inline; }
 
-  .hero { text-align: center; padding: 3.5rem 1.25rem 2.5rem; }
+  .hero { text-align: center; padding: 3.25rem 1.25rem 2.25rem; }
   .spore-print { width: min(340px, 76vw); height: auto; color: var(--spore); display: block; margin: 0 auto; }
-  .stem-ring { stroke: var(--signature); }
+  .stem-ring { stroke: var(--accent); }
   .gill { stroke-dasharray: 1; stroke-dashoffset: 1; animation: develop 1.9s cubic-bezier(.22,.7,.25,1) forwards; animation-delay: var(--d, 0ms); }
   .dust { opacity: 0; animation: settle 1.4s ease 1.2s forwards; }
   @keyframes develop { to { stroke-dashoffset: 0; } }
   @keyframes settle { to { opacity: 1; } }
   h1 {
-    font-family: var(--font-display); font-weight: 400;
+    font-family: var(--font-heading); font-weight: 400; color: var(--heading);
     font-size: clamp(2.5rem, 7vw, 3.75rem); line-height: 1.05; letter-spacing: -0.015em;
-    margin: 1.75rem 0 0.9rem;
+    margin: 1.75rem 0 0.9rem; text-wrap: balance;
   }
-  .welcome { text-wrap: balance; max-width: 34rem; margin: 0 auto 1.75rem; color: var(--ink-soft); font-size: 1.15rem; }
+  .welcome { text-wrap: balance; max-width: 34rem; margin: 0 auto 1.75rem; color: var(--muted); font-size: 1.15rem; }
   .welcome cite { display: block; margin-top: 0.35rem; font-style: normal; font-size: 0.85rem; }
   .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; }
   .btn {
     display: inline-flex; align-items: center; gap: 0.45rem;
     padding: 0.62rem 1.05rem; border-radius: 999px; text-decoration: none;
     font-weight: 600; font-size: 0.95rem;
-    border: 1px solid var(--line); background: color-mix(in srgb, var(--surface) 70%, transparent); color: var(--ink);
+    border: 1px solid var(--border); background: color-mix(in srgb, var(--surface) 70%, transparent); color: var(--foreground);
   }
-  .btn:hover { border-color: var(--signature); }
-  .btn.primary { background: var(--signature); border-color: var(--signature); color: var(--on-signature); }
+  .btn:hover { border-color: var(--accent); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+  .hint { margin: 1.4rem auto 0; max-width: 42rem; font-size: 0.92rem; text-wrap: balance; }
+  .hint a { color: var(--accent); }
 
   .column { max-width: 40rem; margin: 0 auto; padding: 1rem 1.25rem 2rem; }
-  h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.6rem; line-height: 1.2; margin: 2.5rem 0 0.75rem; }
-  .column p { margin: 0 0 1rem; }
+  main h2 { font-family: var(--font-heading); font-weight: 400; color: var(--heading); font-size: 1.6rem; line-height: 1.2; margin: 2.5rem 0 0.6rem; }
+  .column > p { margin: 0 0 1rem; }
+  .section-intro { color: var(--muted); }
+  /* Text that sits straight on the spore field gets a soft halo in the page color. */
+  .hero h1, .welcome, .hint, main h2, .column > p { text-shadow: 0 0 14px var(--background), 0 0 3px var(--background); }
   code { font-size: 0.92em; padding: 0.08em 0.3em; border-radius: 5px; background: color-mix(in srgb, var(--spore) 14%, transparent); }
   .here { list-style: none; margin: 0; padding: 0; }
-  .here li { position: relative; padding: 0.55rem 0 0.55rem 1.4rem; border-bottom: 1px solid var(--line); }
+  .here li { position: relative; padding: 0.55rem 0 0.55rem 1.4rem; border-bottom: 1px solid var(--border); }
   .here li:last-child { border-bottom: 0; }
-  .here li::before { content: ""; position: absolute; left: 0.2rem; top: 1.15rem; width: 7px; height: 7px; border-radius: 50%; background: var(--signature); }
+  .here li::before { content: ""; position: absolute; left: 0.2rem; top: 1.15rem; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
   .here a { font-weight: 600; text-decoration: none; }
   .here a:hover { text-decoration: underline; }
-  .here span { display: block; color: var(--ink-soft); font-size: 0.95rem; }
+  .here span { display: block; color: var(--muted); font-size: 0.95rem; }
 
+  /* The dock: one row, swipeable on phones rather than wrapping into the bottom of the screen. */
   .universal-footer {
     position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
     padding: 0.65rem 1.25rem;
-    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    background: color-mix(in srgb, var(--background) 88%, transparent);
     backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-    border-top: 1px solid var(--line);
-    font-size: 0.8rem; color: var(--ink-soft);
+    border-top: 1px solid var(--border);
+    font-size: 0.8rem; color: var(--muted);
   }
-  .footer-inner { max-width: 60rem; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.2rem 1.1rem; }
-  .footer-inner a { color: var(--ink-soft); text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem; }
-  .footer-inner a:hover { color: var(--signature); }
-  .footer-brand { font-family: var(--font-display); color: var(--ink); }
+  .footer-inner {
+    max-width: 64rem; margin: 0 auto; display: flex; justify-content: safe center; align-items: center;
+    gap: 0.2rem 1.1rem; overflow-x: auto; scrollbar-width: none; white-space: nowrap;
+  }
+  .footer-inner::-webkit-scrollbar { display: none; }
+  .footer-inner > * { flex: none; }
+  .footer-inner a { color: var(--muted); text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem; }
+  .footer-inner a:hover { color: var(--accent); }
+  .footer-brand { font-family: var(--font-heading); color: var(--heading); }
+  @media (max-width: 520px) {
+    .footer-inner .long { display: none; }
+  }
 
   @media (prefers-reduced-motion: reduce) {
-    .gill { animation: none; stroke-dashoffset: 0; }
-    .dust { animation: none; opacity: 1; }
+    :root:not([data-motion]) .gill { animation: none; stroke-dashoffset: 0; }
+    :root:not([data-motion]) .dust { animation: none; opacity: 1; }
   }
 </style>
 </head>
@@ -148,10 +140,8 @@
 
   <header class="topbar">
     <a class="topbar-brand" href="/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 -32 64 64" class="mark" aria-hidden="true"><g stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><line x1="8.00" y1="0.00" x2="26.00" y2="0.00"/><line x1="16.63" y1="3.53" x2="25.43" y2="5.41"/><line x1="7.31" y1="3.25" x2="23.75" y2="10.58"/><line x1="13.75" y1="9.99" x2="21.03" y2="15.28"/><line x1="5.35" y1="5.95" x2="17.40" y2="19.32"/><line x1="8.50" y1="14.72" x2="13.00" y2="22.52"/><line x1="2.47" y1="7.61" x2="8.03" y2="24.73"/><line x1="1.78" y1="16.91" x2="2.72" y2="25.86"/><line x1="-0.84" y1="7.96" x2="-2.72" y2="25.86"/><line x1="-5.25" y1="16.17" x2="-8.03" y2="24.73"/><line x1="-4.00" y1="6.93" x2="-13.00" y2="22.52"/><line x1="-11.38" y1="12.63" x2="-17.40" y2="19.32"/><line x1="-6.47" y1="4.70" x2="-21.03" y2="15.28"/><line x1="-15.53" y1="6.91" x2="-23.75" y2="10.58"/><line x1="-7.83" y1="1.66" x2="-25.43" y2="5.41"/><line x1="-17.00" y1="0.00" x2="-26.00" y2="0.00"/><line x1="-7.83" y1="-1.66" x2="-25.43" y2="-5.41"/><line x1="-15.53" y1="-6.91" x2="-23.75" y2="-10.58"/><line x1="-6.47" y1="-4.70" x2="-21.03" y2="-15.28"/><line x1="-11.38" y1="-12.63" x2="-17.40" y2="-19.32"/><line x1="-4.00" y1="-6.93" x2="-13.00" y2="-22.52"/><line x1="-5.25" y1="-16.17" x2="-8.03" y2="-24.73"/><line x1="-0.84" y1="-7.96" x2="-2.72" y2="-25.86"/><line x1="1.78" y1="-16.91" x2="2.72" y2="-25.86"/><line x1="2.47" y1="-7.61" x2="8.03" y2="-24.73"/><line x1="8.50" y1="-14.72" x2="13.00" y2="-22.52"/><line x1="5.35" y1="-5.95" x2="17.40" y2="-19.32"/><line x1="13.75" y1="-9.99" x2="21.03" y2="-15.28"/><line x1="7.31" y1="-3.25" x2="23.75" y2="-10.58"/><line x1="16.63" y1="-3.53" x2="25.43" y2="-5.41"/></g><circle r="28.5" fill="none" stroke="currentColor" stroke-width="1.6" opacity="0.55"/><circle r="5" fill="currentColor"/></svg> Psanctuary Church</a>
-    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch between light and dark">
-      <i class="ph ph-sun theme-icon-light"></i>
-      <i class="ph ph-moon theme-icon-dark"></i>
-    </button>
+    <!-- Search, the modes + motion, and the light & motion drawer (arrival kit). -->
+    <arrival-controls></arrival-controls>
   </header>
 
   <main>
@@ -168,6 +158,7 @@
         <a class="btn" href="https://psanctuarychurch.github.io/changelog-astro-public/library"><i class="ph ph-books"></i> Library</a>
         <a class="btn" href="https://github.com/psanctuarychurch"><i class="ph ph-github-logo"></i> GitHub organization</a>
       </div>
+      <p class="hint arr-hint">Press <kbd>/</kbd> to search everything here and in the AstroLog. New here? <a href="#welcome" data-arrival-open="guide">Take the welcome tour</a>.</p>
     </section>
 
     <section class="column">
@@ -185,6 +176,15 @@
         <code>psanctuarychurch</code>; its sibling is <a href="https://psanctuary.github.io">psanctuary</a>.
         How the two will divide the work hasn't been decided yet.
       </p>
+
+      <h2 id="latest">What's changed</h2>
+      <p class="section-intro">The AstroLog keeps a plain-language record of what's been built, newest first. Each entry has its own page, and its own preview card when you share it.</p>
+      <!-- Filled from the AstroLog's search.json (same origin), so it never goes stale. -->
+      <arrival-latest limit="4"></arrival-latest>
+
+      <h2 id="people">Who made the changes</h2>
+      <p class="section-intro">Every entry credits whoever did the work, by first name. Eric and Alana are here early, to show how the record will look as more of the community takes part.</p>
+      <arrival-people></arrival-people>
 
       <h2>What's here so far</h2>
       <ul class="here">
@@ -218,9 +218,10 @@
   <footer class="universal-footer">
     <div class="footer-inner">
       <span class="footer-brand">Psanctuary Church</span>
-      <a href="https://psanctuarychurch.github.io/changelog-astro-public/"><i class="ph ph-door-open"></i> Astro Porch</a>
+      <a href="https://psanctuarychurch.github.io/changelog-astro-public/"><i class="ph ph-door-open"></i> <span class="long">Astro </span>Porch</a>
       <a href="https://psanctuarychurch.github.io/changelog-astro-public/changelog"><i class="ph ph-clock-counter-clockwise"></i> Changelog</a>
       <a href="https://psanctuarychurch.github.io/changelog-astro-public/library"><i class="ph ph-books"></i> Library</a>
+      <a href="#welcome" data-arrival-open="guide"><i class="ph ph-compass"></i> Welcome<span class="long"> guide</span></a>
       <a href="https://psanctuarychurch.github.io/404.html"><i class="ph ph-path"></i> Lost the path?</a>
       <a href="https://psanctuary.github.io"><i class="ph ph-tree-structure"></i> Sibling org</a>
       <a href="https://github.com/psanctuarychurch" rel="noopener"><i class="ph ph-github-logo"></i> GitHub</a>
@@ -228,207 +229,8 @@
     </div>
   </footer>
 
-  <script>
-  (function () {
-    var btn = document.getElementById("theme-toggle");
-    if (!btn) return;
-    btn.addEventListener("click", function () {
-      var next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-      document.documentElement.dataset.theme = next;
-      try { localStorage.setItem("psanctuarychurch-theme", next); } catch (e) {}
-    });
-  })();
-  </script>
-  <script>
-(function () {
-  var canvas = document.getElementById("sporefield-canvas");
-  if (!canvas) return;
-  var ctx = canvas.getContext("2d");
-  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var spores = [];
-  var puffs = [];
-  var mouse = { x: -9999, y: -9999, active: false };
-  var last = { x: -9999, y: -9999 };
-  var W = 0, H = 0, dpr = 1;
-  var sporeColor = "#A88BC9";
-  var accentColor = "#E2B45A";
-
-  function readColors() {
-    var cs = getComputedStyle(document.documentElement);
-    sporeColor = cs.getPropertyValue("--spore").trim() || sporeColor;
-    accentColor = cs.getPropertyValue("--signature").trim() || accentColor;
-    if (reduced) drawStatic();
-  }
-  new MutationObserver(readColors).observe(document.documentElement, {
-    attributes: true,
-    attributeFilter: ["data-theme"],
-  });
-
-  function resize() {
-    dpr = Math.min(window.devicePixelRatio || 1, 2);
-    W = window.innerWidth;
-    H = window.innerHeight;
-    canvas.width = W * dpr;
-    canvas.height = H * dpr;
-    canvas.style.width = W + "px";
-    canvas.style.height = H + "px";
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  }
-
-  function seed() {
-    spores = [];
-    var count = Math.min(120, Math.floor((W * H) / 10500));
-    for (var i = 0; i < count; i++) {
-      spores.push({
-        x: Math.random() * W,
-        y: Math.random() * H,
-        r: Math.random() * 1.3 + 0.5,
-        vx: (Math.random() - 0.5) * 0.12,
-        vy: -(0.04 + Math.random() * 0.14),
-        sway: Math.random() * Math.PI * 2,
-        glow: Math.random() < 0.16,
-      });
-    }
-  }
-
-  function drawSpore(s, alpha) {
-    ctx.globalAlpha = alpha;
-    ctx.fillStyle = s.glow ? accentColor : sporeColor;
-    ctx.beginPath();
-    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-    ctx.fill();
-    if (s.glow) {
-      ctx.globalAlpha = alpha * 0.18;
-      ctx.beginPath();
-      ctx.arc(s.x, s.y, s.r * 4, 0, Math.PI * 2);
-      ctx.fill();
-    }
-  }
-
-  // A hypha: a thin line that bends a little, so the network reads as grown, not drawn with a ruler.
-  function hypha(x1, y1, x2, y2, alpha, bend) {
-    var mx = (x1 + x2) / 2;
-    var my = (y1 + y2) / 2;
-    var dx = x2 - x1;
-    var dy = y2 - y1;
-    ctx.globalAlpha = alpha;
-    ctx.strokeStyle = sporeColor;
-    ctx.lineWidth = 0.7;
-    ctx.beginPath();
-    ctx.moveTo(x1, y1);
-    ctx.quadraticCurveTo(mx - dy * bend, my + dx * bend, x2, y2);
-    ctx.stroke();
-  }
-
-  var REACH = 140;
-  var LINK = 72;
-
-  function frame(t) {
-    ctx.clearRect(0, 0, W, H);
-    var near = [];
-    for (var i = 0; i < spores.length; i++) {
-      var s = spores[i];
-      s.sway += 0.006;
-      s.x += s.vx + Math.sin(s.sway) * 0.08;
-      s.y += s.vy;
-      if (s.y < -6) { s.y = H + 6; s.x = Math.random() * W; }
-      if (s.x < -6) s.x = W + 6;
-      if (s.x > W + 6) s.x = -6;
-      var twinkle = 0.5 + 0.5 * Math.sin(t * 0.0012 + s.sway * 3);
-      drawSpore(s, s.glow ? 0.55 + twinkle * 0.35 : 0.22 + twinkle * 0.22);
-      if (mouse.active) {
-        var dx = s.x - mouse.x;
-        var dy = s.y - mouse.y;
-        var d = Math.sqrt(dx * dx + dy * dy);
-        if (d < REACH) near.push({ s: s, d: d });
-      }
-    }
-
-    if (near.length) {
-      near.sort(function (a, b) { return a.d - b.d; });
-      near = near.slice(0, 12);
-      for (var j = 0; j < near.length; j++) {
-        var a = near[j];
-        hypha(mouse.x, mouse.y, a.s.x, a.s.y, (1 - a.d / REACH) * 0.5, 0.18);
-        for (var k = j + 1; k < near.length; k++) {
-          var b = near[k];
-          var ex = a.s.x - b.s.x;
-          var ey = a.s.y - b.s.y;
-          var e = Math.sqrt(ex * ex + ey * ey);
-          if (e < LINK) hypha(a.s.x, a.s.y, b.s.x, b.s.y, (1 - e / LINK) * 0.28, -0.12);
-        }
-      }
-    }
-
-    for (var p = puffs.length - 1; p >= 0; p--) {
-      var q = puffs[p];
-      q.x += q.vx;
-      q.y += q.vy;
-      q.vx *= 0.95;
-      q.vy = q.vy * 0.95 - 0.006;
-      q.life -= 0.012;
-      if (q.life <= 0) { puffs.splice(p, 1); continue; }
-      ctx.globalAlpha = q.life * 0.8;
-      ctx.fillStyle = accentColor;
-      ctx.beginPath();
-      ctx.arc(q.x, q.y, q.size, 0, Math.PI * 2);
-      ctx.fill();
-    }
-    ctx.globalAlpha = 1;
-    if (!document.hidden) requestAnimationFrame(frame);
-  }
-
-  function puff(x, y) {
-    if (last.x < -9000) { last.x = x; last.y = y; return; }
-    var dx = x - last.x;
-    var dy = y - last.y;
-    for (var i = 0; i < 2; i++) {
-      if (puffs.length > 90) puffs.shift();
-      puffs.push({
-        x: x,
-        y: y,
-        vx: dx * 0.08 + (Math.random() - 0.5) * 0.7,
-        vy: dy * 0.08 + (Math.random() - 0.5) * 0.7,
-        life: 1,
-        size: 0.8 + Math.random() * 1.2,
-      });
-    }
-    last.x = x;
-    last.y = y;
-  }
-
-  function drawStatic() {
-    ctx.clearRect(0, 0, W, H);
-    for (var i = 0; i < spores.length; i++) drawSpore(spores[i], spores[i].glow ? 0.6 : 0.3);
-    ctx.globalAlpha = 1;
-  }
-
-  function move(x, y) {
-    mouse.x = x;
-    mouse.y = y;
-    mouse.active = true;
-    puff(x, y);
-  }
-
-  window.addEventListener("resize", function () { resize(); seed(); if (reduced) drawStatic(); });
-  resize();
-  seed();
-  readColors();
-
-  if (reduced) { drawStatic(); return; }
-
-  window.addEventListener("mousemove", function (e) { move(e.clientX, e.clientY); });
-  window.addEventListener("touchmove", function (e) {
-    if (e.touches[0]) move(e.touches[0].clientX, e.touches[0].clientY);
-  }, { passive: true });
-  document.addEventListener("mouseleave", function () { mouse.active = false; last.x = -9999; });
-  window.addEventListener("touchend", function () { mouse.active = false; last.x = -9999; });
-  document.addEventListener("visibilitychange", function () {
-    if (!document.hidden) requestAnimationFrame(frame);
-  });
-  requestAnimationFrame(frame);
-})();
-
-  </script>
+  <!-- The spore field: drifting spores and cursor-lit mycelium, shared with the AstroLog. It follows
+       the kit's motion and cursor-effects choices. -->
+  <script src="/arrival/sporefield.js" defer></script>
 </body>
 </html>
