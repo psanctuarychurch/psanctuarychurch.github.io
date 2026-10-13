@@ -182,3 +182,10 @@
     animation: none;
   }
 }
+
+/* ── reading mode (kit 1.1): Print Paper, still, more contrast, no threads. The spore field behind
+   every page fades back to a whisper, so nothing competes with the words. ─────────────────── */
+:root[data-reading="on"] #sporefield-canvas {
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}

@@ -66,7 +66,7 @@
 
     modes: [
       { id: "spore", name: "Spore Print", note: "Violet-black, like the print a cap leaves on paper overnight, lit in gold.", swatch: ["#16111a", "#e2b45a"], dark: true },
-      { id: "paper", name: "Print Paper", note: "The white card a print is taken on, inked in violet and gold.", swatch: ["#f3f1f4", "#8a5b10"] },
+      { id: "paper", name: "Print Paper", note: "The white card a print is taken on, inked in violet and gold.", swatch: ["#f3f1f4", "#8a5b10"], calm: true },
       { id: "candle", name: "Candlelight", note: "Amber and old gold, the sanctuary after dark, lit by candles.", swatch: ["#1a120d", "#f0c46a"], dark: true },
       {
         id: "day",
@@ -81,6 +81,14 @@
       },
     ],
     defaultMode: "spore",
+
+    // Reading mode (kit 1.1): one tap for Print Paper, the spores at rest, more contrast and no
+    // mycelium threads; another tap brings back what the visitor had.
+    reading: { light: "paper" },
+
+    // "What's new since your last visit": the AstroLog's latest.json lists its newest entries,
+    // write-ups and ledger items (same origin for the portal and the AstroLog).
+    news: { sources: [LOG + "/latest.json"] },
 
     // The spore field behind every page: spores drift up, and the pointer grows mycelium threads to
     // the ones nearby. Its cursor effects (threads and spore dust) switch off on their own, and rest
@@ -126,6 +134,12 @@
         href: LOG + "/library",
         label: "Open the library",
       },
+      ledger: {
+        name: "The ledger",
+        text: "Every public change to Psanctuary Church's code on GitHub, in plain words: grouped by day and by kind, credited by first name, and linked to the change itself. For anyone who'd rather not open GitHub. It refreshes every day.",
+        href: LOG + "/ledger",
+        label: "Open the ledger",
+      },
     },
 
     sites: {
@@ -156,6 +170,7 @@
     words: {
       enter: "Enter Psanctuary Church",
       cursorNote: "Mycelium threads that reach from your pointer to nearby spores, and a little spore dust as you move. Switch them off if you'd rather not.",
+      readingNote: "One tap for the calmest page: Print Paper, the spores at rest, more contrast, and no mycelium threads. Tap again to go back to how you had it.",
       pause: "Let the spores settle",
       play: "Let the spores drift",
       searchTip: "Anywhere on Psanctuary Church's pages, any time: every change, write-up, person and page, including the AstroLog from the entry portal.",
@@ -166,6 +181,7 @@
       items: [
         { t: "Psanctuary Church entry portal", k: "page", i: "house", h: ROOT + "/", pin: true, x: "home github io root portal" },
         { t: "psanctuary.org", k: "the church", i: "globe-simple", h: SITE, pin: true, x: "website main home church" },
+        { t: "The ledger: every public change", k: "AstroLog", i: "scroll", h: LOG + "/ledger", pin: true, x: "commits github history code record plain words" },
         { t: "What to expect", k: "psanctuary.org", i: "compass", h: SITE + "/welcome", x: "welcome new members ceremony" },
         { t: "Sunday service", k: "psanctuary.org", i: "sun-horizon", h: SITE + "/sunday", x: "zoom meditation tao journaling weekly online" },
         { t: "Membership", k: "psanctuary.org", i: "hand-heart", h: SITE + "/membership", x: "join member plans" },
