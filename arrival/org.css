@@ -189,3 +189,10 @@
   opacity: 0.3;
   transition: opacity 0.3s ease;
 }
+
+/* ── the community window (2026-10-22): a live card with one door shows just that door. The kit
+   always draws a public slot and a join slot; the member network on Mighty Networks has one link
+   for joining and signing in, so an empty "coming soon" slot beside it would be untrue. ───────── */
+.arr-plat:not(.is-soon) .arr-plat-link.is-off {
+  display: none;
+}
