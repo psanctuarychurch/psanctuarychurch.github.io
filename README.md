@@ -82,6 +82,7 @@ what's new since your last visit.
 ## 🤝 Community health
 
 - [`CONTACTS.md`](https://github.com/psanctuarychurch/.github/blob/main/CONTACTS.md): every way to reach the church
+- [`ONBOARDING.md`](https://github.com/psanctuarychurch/.github/blob/main/ONBOARDING.md): **joined the organization? start here**: two-factor login, connecting your AI helper, and how we work
 - [`CONTRIBUTING.md`](https://github.com/psanctuarychurch/.github/blob/main/CONTRIBUTING.md): how to contribute, with care for what's sacred
 - [`SECURITY.md`](https://github.com/psanctuarychurch/.github/blob/main/SECURITY.md): reporting a security problem
 - [`SOCIAL-PREVIEWS.md`](https://github.com/psanctuarychurch/.github/blob/main/SOCIAL-PREVIEWS.md): how to refresh link previews, and which pages have their own share image
