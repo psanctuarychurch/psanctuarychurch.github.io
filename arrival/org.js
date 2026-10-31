@@ -10,6 +10,7 @@
 (function () {
   var ROOT = "https://psanctuarychurch.github.io";
   var LOG = ROOT + "/changelog-astro-public";
+  var READING = ROOT + "/reading-room-public/";   // the reading room's public page: proposals, procedures & decks
   var SITE = "https://www.psanctuary.org";
   var SIBLING = "https://psanctuary.github.io";
   // The church's member network on Mighty Networks: its front page, and the plans to join.
@@ -146,6 +147,7 @@
           icon: "info",
           priority: 1,
           items: [
+            { id: "reading", label: "Proposals, procedures & decks", icon: "folder-open", href: READING, note: "The reading room: what anyone may read, and the way in for members" },
             { id: "roadmap", label: "Roadmap", icon: "path", href: LOG + "/roadmap", note: "Where these pages are headed" },
             { id: "sustainability", label: "Sustainability", icon: "plant", href: LOG + "/sustainability", note: "What it takes to keep them running" },
             { id: "home", label: "psanctuary.org", icon: "globe-simple", href: SITE, note: "The church's main site" },
@@ -158,7 +160,7 @@
     footer: {
       label: "Psanctuary Church, all the ways around",
       groups: [
-        { label: "Explore", icon: "compass", items: ["portal", "porch", "changelog", "library", "ledger", "map"] },
+        { label: "Explore", icon: "compass", items: ["portal", "porch", "changelog", "library", "ledger", "map", "reading"] },
         { label: "Get involved", icon: "hand-heart", items: ["community", "contact", "donate", "pledge", { id: "guide", label: "Welcome guide", icon: "signpost", href: "#welcome", open: "guide" }] },
         { label: "About this build", icon: "wrench", items: ["roadmap", "sustainability", "github", { id: "contacts", label: "CONTACTS.md", icon: "address-book", href: CONTACTS }, { id: "source", label: "AstroLog source", icon: "code", href: "https://github.com/psanctuarychurch/changelog-astro-public" }] },
         { label: "Psanctuary Church", icon: "plant", items: ["home", "sibling", { id: "youtube", label: "YouTube", icon: "youtube-logo", href: "https://www.youtube.com/@psanctuarychurch" }] },
@@ -365,6 +367,7 @@
         { t: "Join or sign in: the member community", k: "Mighty Networks", i: "users-three", h: MIGHTY, pin: true, x: "community members mighty networks join sign in dashboard app clubs events" },
         { t: "Every way to reach the church (CONTACTS.md)", k: "GitHub", i: "address-book", h: CONTACTS, x: "contacts email info address channels youtube spotify instagram facebook reach out" },
         { t: "Legal notice", k: "psanctuary.org", i: "scroll", h: LEGAL, x: "legal 508 faith based organization rfra church status" },
+        { t: "Proposals, procedures & decks: the reading room", k: "page", i: "folder-open", h: READING, x: "reading room proposals procedures sop standard operating decks slides welcome pdf members access" },
         { t: "Roadmap", k: "page", i: "path", h: LOG + "/roadmap", x: "plans next future ideas direction" },
         { t: "Sustainability", k: "page", i: "plant", h: LOG + "/sustainability", x: "maintenance keep running tokens costs upkeep" },
         { t: "What to expect", k: "psanctuary.org", i: "compass", h: SITE + "/welcome", x: "welcome new members ceremony" },
@@ -428,6 +431,9 @@
         "Pledge": "Compromiso",
         "Sign a pledge of support: free, nothing sent": "Firma un compromiso de apoyo: gratis, no se envía nada",
         "About": "Acerca de",
+        "Proposals, procedures & decks": "Propuestas, procedimientos y presentaciones",
+        "The reading room: what anyone may read, and the way in for members": "La sala de lectura: lo que cualquiera puede leer, y la entrada para los miembros",
+        "Proposals, procedures & decks: the reading room": "Propuestas, procedimientos y presentaciones: la sala de lectura",
         "Roadmap": "Hoja de ruta",
         "Where these pages are headed": "Hacia dónde van estas páginas",
         "Sustainability": "Sostenibilidad",
