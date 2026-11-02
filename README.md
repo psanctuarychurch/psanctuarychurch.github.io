@@ -18,6 +18,8 @@
   <a href="https://psanctuary-member-community.mn.co/"><img alt="Member community on Mighty Networks" src="https://img.shields.io/badge/members-Mighty_Networks-6A4C8C?style=flat-square"></a>
   <a href="https://psanctuarychurch.github.io/donate/"><img alt="Donate" src="https://img.shields.io/badge/donate-ways_to_give-F0CF8A?style=flat-square"></a>
   <a href="https://psanctuarychurch.github.io/pledge/"><img alt="A pledge of support" src="https://img.shields.io/badge/pledge-of_support-C2A9E0?style=flat-square"></a>
+  <a href="https://github.com/psanctuarychurch/.github/blob/main/decks/welcome.marp.pdf"><img alt="Welcome deck" src="https://img.shields.io/badge/welcome-deck-2563eb?style=flat-square"></a>
+  <a href="https://psanctuarychurch.github.io/reading-room-public/"><img alt="Reading room" src="https://img.shields.io/badge/reading-room-1d4ed8?style=flat-square"></a>
 </p>
 
 In the church's own words, Psanctuary is "an inter-tradition church built on growing together with
@@ -30,7 +32,7 @@ a sincere sacred mushroom practice rooted in spiritual autonomy":
 > <sub>From [psanctuary.org](https://www.psanctuary.org). The church's standing is set out in its own
 > [legal notice](https://www.psanctuary.org/legal-notice).</sub>
 
-## ⛪ Two organizations, one church
+## <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/landmark.svg" width="24" height="24" alt=""> Two organizations, one church
 
 The church's home is [psanctuary.org](https://www.psanctuary.org): Sunday service, membership,
 courses, ceremonies and events all live there. On GitHub, the church holds two organizations, each
@@ -38,32 +40,67 @@ with its own purpose:
 
 | | |
 | --- | --- |
-| ⛪ **psanctuarychurch** (you're here) | The church's **professional face** on GitHub: its official home here, with an open record of everything built for it. |
-| 🌈 **[psanctuary](https://github.com/psanctuary)** | The **decentralized, playful dimension**: experiments in tools the community can own, a DAO and tokens of gratitude among the ideas being explored. |
+| <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/landmark.svg" width="16" height="16" alt=""> **psanctuarychurch** (you're here) | The church's **professional face** on GitHub: its official home here, with an open record of everything built for it. |
+| <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/sparkles.svg" width="16" height="16" alt=""> **[psanctuary](https://github.com/psanctuary)** · Ethereal Offering | The **decentralized, playful dimension**: experiments in tools the community can own, a DAO and tokens of gratitude among the ideas being explored. The church is its **steward**. |
 
-## 🧭 Explore
+## <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/network.svg" width="24" height="24" alt=""> The mycelium: a steward, and the threads between houses
+
+Mycelium is the part of a mushroom you rarely see: threads beneath the forest floor that carry what one tree has to
+another. The church's GitHub home works the same way. It **stewards Psanctuary · Ethereal Offering**, the playful,
+community-owned side, and it shares one way of working (proposals that ask, procedures that do, reading rooms that
+show, a welcome deck that walks you in) with sibling houses the same helpers serve, each in its own colour and in its
+own words.
+
+```mermaid
+flowchart LR
+  PC(("Psanctuary Church<br/>steward")) --- EO["Psanctuary ·<br/>Ethereal Offering"]
+  PC -. "shared ways of working" .- THEF["The Holy Earth<br/>Foundation"]
+  PC -. "shared ways of working" .- PIR["Psychedelics<br/>in Recovery"]
+  PC -. "shared ways of working" .- ORG["O-R-G"]
+```
+
+<sub>[The Holy Earth Foundation](https://github.com/theholyearthfoundation) · [Psychedelics in Recovery](https://github.com/psychedelicsinrecovery) · [O-R-G](https://github.com/Octagon-Religious-Research-Group-ORG) · [Psanctuary](https://github.com/psanctuary). Each house keeps its own decisions; nothing is merged between them.</sub>
+
+## <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/compass.svg" width="24" height="24" alt=""> Explore
 
 | Where | What you'll find |
 | --- | --- |
-| 🏠 [Entry portal](https://psanctuarychurch.github.io/) | The church's front door on GitHub: the latest changes, who made them, and the way into everything below. |
-| 🔭 [AstroLog](https://psanctuarychurch.github.io/changelog-astro-public/) | The front porch of the church's record: what changed, how it works, and who did the work. |
-| 🕰️ [Changelog](https://psanctuarychurch.github.io/changelog-astro-public/changelog) | Dated, plain-language entries, newest first, each with the full story folded underneath. |
-| 📚 [Library](https://psanctuarychurch.github.io/changelog-astro-public/library) | Longer write-ups on how these pages are built, and why. |
-| 🗺️ [Map](https://psanctuarychurch.github.io/map/) | Every place these pages lead, each with a picture of where it goes. |
-| 📜 [Ledger](https://psanctuarychurch.github.io/changelog-astro-public/ledger) | Every public change to the code, in plain words, grouped by day and by kind. Refreshed daily. |
-| 💛 [Donate](https://psanctuarychurch.github.io/donate/) | Giving through psanctuary.org, receipts and taxes in the church's own words, a thank-you list, and a wallet preview. |
-| 🤝 [Pledge](https://psanctuarychurch.github.io/pledge/) | A pledge of support, signed with a wallet: free, nothing sent, nothing recorded, no counts. |
-| 🛤️ [Roadmap](https://psanctuarychurch.github.io/changelog-astro-public/roadmap) | Where these pages are headed, without dates. |
-| 🌱 [Sustainability](https://psanctuarychurch.github.io/changelog-astro-public/sustainability) | What keeps them running, and the plan for them to outlive any one person. |
-| 📇 [Contacts](https://github.com/psanctuarychurch/.github/blob/main/CONTACTS.md) | Every way to reach the church: info@psanctuary.org, the contact form, and its channels. |
-| 🍄 [Member community](https://psanctuary-member-community.mn.co/) | The church's member network on Mighty Networks: one link to join or sign in. |
-| 🔄 [Social previews](https://github.com/psanctuarychurch/.github/blob/main/SOCIAL-PREVIEWS.md) | How to refresh link previews in Telegram, LinkedIn, Facebook and more, and which pages have their own share image. |
+| <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/door-open.svg" width="16" height="16" alt=""> [Entry portal](https://psanctuarychurch.github.io/) | The church's front door on GitHub: the latest changes, who made them, and the way into everything below. |
+| <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/sparkles.svg" width="16" height="16" alt=""> [AstroLog](https://psanctuarychurch.github.io/changelog-astro-public/) | The front porch of the church's record: what changed, how it works, and who did the work. |
+| <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/history.svg" width="16" height="16" alt=""> [Changelog](https://psanctuarychurch.github.io/changelog-astro-public/changelog) | Dated, plain-language entries, newest first, each with the full story folded underneath. |
+| <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/book-open.svg" width="16" height="16" alt=""> [Library](https://psanctuarychurch.github.io/changelog-astro-public/library) | Longer write-ups on how these pages are built, and why. |
+| <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/map.svg" width="16" height="16" alt=""> [Map](https://psanctuarychurch.github.io/map/) | Every place these pages lead, each with a picture of where it goes. |
+| <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/scroll-text.svg" width="16" height="16" alt=""> [Ledger](https://psanctuarychurch.github.io/changelog-astro-public/ledger) | Every public change to the code, in plain words, grouped by day and by kind. Refreshed daily. |
+| <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/gift.svg" width="16" height="16" alt=""> [Donate](https://psanctuarychurch.github.io/donate/) | Giving through psanctuary.org, receipts and taxes in the church's own words, a thank-you list, and a wallet preview. |
+| <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/handshake.svg" width="16" height="16" alt=""> [Pledge](https://psanctuarychurch.github.io/pledge/) | A pledge of support, signed with a wallet: free, nothing sent, nothing recorded, no counts. |
+| <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/route.svg" width="16" height="16" alt=""> [Roadmap](https://psanctuarychurch.github.io/changelog-astro-public/roadmap) | Where these pages are headed, without dates. |
+| <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/sprout.svg" width="16" height="16" alt=""> [Sustainability](https://psanctuarychurch.github.io/changelog-astro-public/sustainability) | What keeps them running, and the plan for them to outlive any one person. |
+| <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/mail.svg" width="16" height="16" alt=""> [Contacts](https://github.com/psanctuarychurch/.github/blob/main/CONTACTS.md) | Every way to reach the church: info@psanctuary.org, the contact form, and its channels. |
+| <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/users-round.svg" width="16" height="16" alt=""> [Member community](https://psanctuary-member-community.mn.co/) | The church's member network on Mighty Networks: one link to join or sign in. |
+| <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/link.svg" width="16" height="16" alt=""> [Social previews](https://github.com/psanctuarychurch/.github/blob/main/SOCIAL-PREVIEWS.md) | How to refresh link previews in Telegram, LinkedIn, Facebook and more, and which pages have their own share image. |
 
 Every page here shares one arrival kit: choose a light (Candlelight is the church's own), a pace and
 a contrast when you arrive, press <kbd>/</kbd> to search, tap the book for reading mode, and see
 what's new since your last visit.
 
-## 👥 People
+## <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/files.svg" width="24" height="24" alt=""> Welcome deck, reading rooms, procedures
+
+How the church's GitHub home decides, does and explains its work, each page with a PDF beside it.
+
+| | Where | What you'll find |
+| --- | --- | --- |
+| <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/presentation.svg" width="16" height="16" alt=""> | [**Welcome deck**](https://github.com/psanctuarychurch/.github/blob/main/decks/welcome.marp.pdf) ([html](https://github.com/psanctuarychurch/.github/blob/main/decks/welcome.marp.html), [markdown](https://github.com/psanctuarychurch/.github/blob/main/decks/welcome.marp.md)) | **Start here.** Seven stops from "no GitHub account" to "I read, I answer, and my helper reads with me", and who to ask. |
+| <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/globe.svg" width="16" height="16" alt=""> | [Public reading room](https://psanctuarychurch.github.io/reading-room-public/) | The front page anyone can open: *Start here*, the procedures marked public, the decks, and the door to the members' room. |
+| <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/door-open.svg" width="16" height="16" alt=""> | [Members' reading room](https://github.com/psanctuarychurch/reading-room) | The church's proposals, procedures and decks together, for members signed in through the `readers` team (anyone else sees a 404). |
+| <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/user-plus.svg" width="16" height="16" alt=""> | **SOP-COM-001** *New to GitHub: your first hour* ([members' room](https://github.com/psanctuarychurch/reading-room/blob/main/procedures/COM/SOP-COM-001-new-to-github-your-first-hour.md)) | Your own account and password, two-factor sign-in, the invitation, five words, the reading room, a helper. |
+| <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/scroll-text.svg" width="16" height="16" alt=""> | [Procedures, public copy](https://github.com/psanctuarychurch/ops-standard-operating-procedures-public) | *This is how we do it now*: the nine procedures every house shares, filled in for the church, with PDFs (listed; they arrive with the first sync). |
+| <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/book-open.svg" width="16" height="16" alt=""> | [Proposals](https://github.com/psanctuarychurch/reading-room/tree/main/proposals) (members' room) | *Should we?* One folder, one page, a PDF beside it, a decisions log. |
+| <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/presentation.svg" width="16" height="16" alt=""> | [Decks](https://github.com/psanctuarychurch/.github/tree/main/decks) | Every slide walk-through, as PDF, HTML and the markdown it was made from. |
+| <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/git-branch.svg" width="16" height="16" alt=""> | [Gitmoji](https://github.com/drasticstatic/my-template/blob/main/GITMOJI.md) | How commits are titled here: one gitmoji and a type, `:memo: docs(scope): subject`. |
+
+Proposals and the members' room are for members: ask the technical steward for access, as the welcome deck's last slide explains.
+
+## <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/users.svg" width="24" height="24" alt=""> People
 
 | | |
 | --- | --- |
@@ -71,27 +108,30 @@ what's new since your last visit.
 | **Alana** | A minister leading the church's **Maine** frontier, and part of the web-dev team. |
 | **Christopher W** ([@drasticstatic](https://github.com/drasticstatic)) | Leads the **Pennsylvania** frontier, and looks after the church's GitHub home with [Alfred](https://github.com/drasticstatic/anthropas-argus-alfred-public-preview). |
 
-## 📦 Repositories
+## <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/layers.svg" width="24" height="24" alt=""> Repositories
 
 | Repository | What it holds |
 | --- | --- |
 | [psanctuarychurch.github.io](https://github.com/psanctuarychurch/psanctuarychurch.github.io) | The entry portal (`/`, `/donate/`, `/pledge/`, `/map/`), which also serves the arrival kit every page here shares. |
 | [changelog-astro-public](https://github.com/psanctuarychurch/changelog-astro-public) | The AstroLog's published pages (written in a private source repository). |
-| [.github](https://github.com/psanctuarychurch/.github) | This profile, and the defaults every repository here shares. |
+| [reading-room-public](https://github.com/psanctuarychurch/reading-room-public) | The reading room's public front page, and only the pages marked public (copied in by a sync, never edited by hand). |
+| [ops-standard-operating-procedures-public](https://github.com/psanctuarychurch/ops-standard-operating-procedures-public) | The procedures marked public (copied in by a sync, never edited by hand). |
+| [.github](https://github.com/psanctuarychurch/.github) | This profile, the welcome deck in `decks/`, and the defaults every repository here shares. |
+| [reading-room](https://github.com/psanctuarychurch/reading-room) · [proposals](https://github.com/psanctuarychurch/proposals) · [ops-standard-operating-procedures](https://github.com/psanctuarychurch/ops-standard-operating-procedures) · [legal](https://github.com/psanctuarychurch/legal) | Members only. Names may be public; contents stay private. |
 
-## 🤝 Community health
+## <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/hand-heart.svg" width="24" height="24" alt=""> Community health
 
 - [`CONTACTS.md`](https://github.com/psanctuarychurch/.github/blob/main/CONTACTS.md): every way to reach the church
 - [`ONBOARDING.md`](https://github.com/psanctuarychurch/.github/blob/main/ONBOARDING.md): **joined the organization? start here**: two-factor login, connecting your AI helper, and how we work
-- [`CONTRIBUTING.md`](https://github.com/psanctuarychurch/.github/blob/main/CONTRIBUTING.md): how to contribute, with care for what's sacred
+- [`CONTRIBUTING.md`](https://github.com/psanctuarychurch/.github/blob/main/CONTRIBUTING.md): how to contribute, with care for what's sacred, and how commits are titled ([Gitmoji](https://github.com/drasticstatic/my-template/blob/main/GITMOJI.md))
 - [`SECURITY.md`](https://github.com/psanctuarychurch/.github/blob/main/SECURITY.md): reporting a security problem
 - [`SOCIAL-PREVIEWS.md`](https://github.com/psanctuarychurch/.github/blob/main/SOCIAL-PREVIEWS.md): how to refresh link previews, and which pages have their own share image
 
-## 📄 License
+## <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/file-text.svg" width="24" height="24" alt=""> License
 
-- 💻 **Code:** MIT, see [`LICENSE`](https://github.com/psanctuarychurch/.github/blob/main/LICENSE)
-- 📝 **Written content** (docs, changelog and library prose, READMEs): CC BY-SA 4.0, see [`LICENSE-CONTENT`](https://github.com/psanctuarychurch/.github/blob/main/LICENSE-CONTENT)
-- 🏷️ **The Psanctuary name, logos and marks:** not covered by either license, see [`TRADEMARKS.md`](https://github.com/psanctuarychurch/.github/blob/main/TRADEMARKS.md)
+- <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/type.svg" width="16" height="16" alt=""> **Code:** MIT, see [`LICENSE`](https://github.com/psanctuarychurch/.github/blob/main/LICENSE)
+- <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/file-text.svg" width="16" height="16" alt=""> **Written content** (docs, changelog and library prose, READMEs): CC BY-SA 4.0, see [`LICENSE-CONTENT`](https://github.com/psanctuarychurch/.github/blob/main/LICENSE-CONTENT)
+- <img src="https://raw.githubusercontent.com/psanctuarychurch/.github/main/profile/assets/icons/tags.svg" width="16" height="16" alt=""> **The Psanctuary name, logos and marks:** not covered by either license, see [`TRADEMARKS.md`](https://github.com/psanctuarychurch/.github/blob/main/TRADEMARKS.md)
 
 ---
 
